@@ -64,7 +64,7 @@
                                     <asp:HyperLink ID="hlAgregarSucursal" runat="server">Agregar Sucursal</asp:HyperLink>
                                 </td>
                                 <td class="auto-style5">
-                                    <asp:HyperLink ID="hpListadoSucursales" runat="server">Listado de Sucursales</asp:HyperLink>
+                                    <asp:HyperLink ID="hpListadoSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                                 </td>
                                 <td>
                                     <asp:HyperLink ID="hpEliminarSucursal" runat="server">Eliminar Sucursal</asp:HyperLink>
@@ -75,11 +75,11 @@
                     </asp:Panel>
                     <table class="auto-style1">
                         <tr>
-                            <td class="auto-style2">&nbsp;</td>
-                            <td class="auto-style6">&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="auto-style7"></td>
+                            <td class="auto-style8"></td>
+                            <td class="auto-style9"></td>
+                            <td class="auto-style9"></td>
+                            <td class="auto-style9"></td>
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
