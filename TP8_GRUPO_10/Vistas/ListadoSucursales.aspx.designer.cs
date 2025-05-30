@@ -51,13 +51,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hpEliminarSucursal;
 
         /// <summary>
-        /// Control lblAgregarSucursal.
+        /// Control lblListadoSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAgregarSucursal;
+        protected global::System.Web.UI.WebControls.Label lblListadoSucursales;
 
         /// <summary>
         /// Control txtFiltroId.
@@ -96,13 +96,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
-        /// Control ValidationSummary1.
+        /// Control vsFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsFiltro;
 
         /// <summary>
         /// Control gvListadoSucursale.

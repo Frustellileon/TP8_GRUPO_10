@@ -81,7 +81,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style6">
-                                <asp:Label ID="lblAgregarSucursal" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Listado de sucursales"></asp:Label>
+                                <asp:Label ID="lblListadoSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Listado de sucursales"></asp:Label>
                             </td>
                             <td class="auto-style7">&nbsp;</td>
                             <td class="auto-style8">&nbsp;</td>
@@ -98,7 +98,7 @@
                         <tr>
                             <td class="auto-style10">Búsqueda ingrese ID sucursal:</td>
                             <td class="auto-style11">
-                                <asp:TextBox ID="txtFiltroId" runat="server" ValidationGroup="Filtro" Width="250px"></asp:TextBox>
+                                <asp:TextBox ID="txtFiltroId" runat="server" ValidationGroup="Filtro" Width="250px" TextMode="Number"></asp:TextBox>
                             </td>
                             <td class="auto-style12">
                                 <asp:RequiredFieldValidator ID="rfvFiltro" runat="server" ControlToValidate="txtFiltroId" ErrorMessage="Debe ingresar un ID al filtro." ValidateRequestMode="Enabled" ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
@@ -116,7 +116,7 @@
                             <td class="auto-style8">&nbsp;</td>
                             <td class="auto-style9">&nbsp;</td>
                             <td>
-                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Filtro" />
+                                <asp:ValidationSummary ID="vsFiltro" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Filtro" />
                             </td>
                         </tr>
             </table>
