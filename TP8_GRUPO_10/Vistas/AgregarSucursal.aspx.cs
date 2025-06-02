@@ -16,11 +16,11 @@ namespace Vistas
         {
             if (!IsPostBack)
             {
-                CargarDDLProvincias();
+                CargarDDLProvincia();
             }
         }
 
-        private void CargarDDLProvincias()
+        private void CargarDDLProvincia()
         {
             ddlProvincia.DataSource = negocioSucursales.getLista();
             ddlProvincia.DataTextField = "DescripcionProvincia";
