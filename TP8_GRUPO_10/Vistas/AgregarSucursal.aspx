@@ -7,58 +7,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 41px;
-        }
-        .auto-style3 {
-            width: 151px;
-        }
-        .auto-style4 {
-            width: 172px;
-        }
-        .auto-style5 {
-            width: 202px;
-        }
-        .auto-style6 {
-            width: 198px;
-        }
-        .auto-style7 {
-            width: 41px;
-            height: 23px;
-        }
-        .auto-style8 {
-            width: 198px;
-            height: 23px;
-        }
-        .auto-style9 {
-            height: 23px;
-        }
-        .auto-style10 {
-            width: 41px;
-            height: 30px;
-        }
-        .auto-style11 {
-            width: 198px;
-            height: 30px;
-        }
-        .auto-style12 {
-            height: 30px;
-        }
-        .auto-style13 {
-            width: 41px;
-            height: 32px;
-        }
-        .auto-style14 {
-            width: 198px;
-            height: 32px;
-        }
-        .auto-style15 {
-            height: 32px;
-        }
-    </style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        padding: 40px;
+    }
+
+    table.auto-style1 {
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 700px;
+    }
+
+    asp\:TextBox, asp\:DropDownList, asp\:Button {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .auto-style6, .auto-style14, .auto-style11 {
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+    }
+
+    asp\:Button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    asp\:Button:hover {
+        background-color: #45a049;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .subtitulo {
+        text-align: center;
+        font-size: 20px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+</style>
+
 </head>
 <body>
     <form id="form1" runat="server">
