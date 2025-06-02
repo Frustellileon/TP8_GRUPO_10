@@ -29,5 +29,14 @@ namespace Vistas
 
             ddlProvincia.Items.Insert(0, new ListItem("--Seleccione una provincia--", "0"));
         }
+
+        // Método para limpiar los campos del formulario, todavía no lo implementé
+        private void LimpiarCampos()
+        {
+            txtNombreSucursal.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincia.SelectedIndex = 0;
+        }
     }
 }

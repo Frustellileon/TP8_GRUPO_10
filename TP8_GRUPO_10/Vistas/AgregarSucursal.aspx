@@ -47,6 +47,17 @@
         .auto-style12 {
             height: 30px;
         }
+        .auto-style13 {
+            width: 41px;
+            height: 32px;
+        }
+        .auto-style14 {
+            width: 198px;
+            height: 32px;
+        }
+        .auto-style15 {
+            height: 32px;
+        }
     </style>
 </head>
 <body>
@@ -114,15 +125,15 @@
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">&nbsp;</td>
-                            <td class="auto-style6">
+                            <td class="auto-style13"></td>
+                            <td class="auto-style14">
                                 <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                             </td>
-                            <td>
+                            <td class="auto-style15">
                                 <asp:TextBox ID="txtNombreSucursal" runat="server" Height="22px" Width="230px"></asp:TextBox>
                             </td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="auto-style15"></td>
+                            <td class="auto-style15"></td>
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
