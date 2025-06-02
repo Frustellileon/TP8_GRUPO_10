@@ -121,7 +121,7 @@
                         </tr>
             </table>
         </div>
-        <asp:GridView ID="gvListadoSucursale" runat="server">
+        <asp:GridView ID="gvListadoSucursales" runat="server">
         </asp:GridView>
     </form>
 </body>
