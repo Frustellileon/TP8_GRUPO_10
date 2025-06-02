@@ -15,7 +15,7 @@ namespace AccesoDatos
     {
         ///Atributos de la clase
         private AccesoBD accesoDatos = new AccesoBD();
-        string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
+        private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
         SqlCommand sqlCommand;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
@@ -29,12 +29,19 @@ namespace AccesoDatos
             return dataTable;
         }
 
+        public SqlDataReader getListaProvincias()
+        {
+            SqlDataReader sqlDataReader = accesoDatos.ObtenerLista();
+            return sqlDataReader;
+        }
+
         public void ArmarParametro_EliminarSucursal(ref SqlCommand command, Sucursal IDsucursal)
         {
             SqlParameter param = new SqlParameter();
             param = command.Parameters.Add("@Id_Sucursal", SqlDbType.Int);
             param.Value = IDsucursal.IdSucursal;
         }
+
         public int EliminarSucursal(Sucursal IDsucursal)
         {
             sqlCommand = new SqlCommand();
@@ -73,7 +80,6 @@ namespace AccesoDatos
                     cmdCrear.ExecuteNonQuery();
                 }
             }
-
         }
     }
 }

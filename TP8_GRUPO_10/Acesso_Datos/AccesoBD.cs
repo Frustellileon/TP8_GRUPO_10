@@ -14,10 +14,11 @@ namespace AccesoDatos
     {
         ///---------------------------------------------------- Propiedades -------------------------------------------------------------------------------
         private string rutaConeccion = "Data Source=localhost\\sqlexpress; Initial Catalog=BDSucursales;Integrated Security=True";
-        private bool estadoConeccion = false;
-        private SqlConnection coneccion;
+        private bool estadoConexion = false;
+        private SqlConnection conexion;
         private SqlDataAdapter dataAdapter;
         private SqlCommand sqlCommand;
+        private SqlDataReader sqlDataReader;
         private DataSet dataSet;
         private int filasAfectadas;
 
@@ -35,12 +36,12 @@ namespace AccesoDatos
 
         public bool GetEstadoConeccion()
         {
-            return estadoConeccion;
+            return estadoConexion;
         }
 
         public SqlConnection GetConeccion()
         {
-            return coneccion;
+            return conexion;
         }
         public SqlDataAdapter GetDataAdapter()
         {
@@ -70,12 +71,12 @@ namespace AccesoDatos
 
         public void SetEstadoConeccion(bool estado)
         {
-            estadoConeccion = estado;
+            estadoConexion = estado;
         }
 
-        public void SetConeccion(SqlConnection conexion)
+        public void SetConeccion(SqlConnection Conexion)
         {
-            coneccion = conexion;
+            conexion = Conexion;
         }
         public void SetDataAdapter(SqlDataAdapter adapter)
         {
@@ -98,12 +99,12 @@ namespace AccesoDatos
         ///------------------------------------------------------ Metodos ---------------------------------------------------------------------------------
         public SqlConnection ObtenerConexion()
         {
-            coneccion = new SqlConnection(rutaConeccion);
+            conexion = new SqlConnection(rutaConeccion);
             try
             {
-                coneccion.Open();
-                estadoConeccion = true;
-                return coneccion;
+                conexion.Open();
+                estadoConexion = true;
+                return conexion;
             }
             catch (Exception ex)
             {
@@ -128,16 +129,15 @@ namespace AccesoDatos
 
         public DataTable ObtenerTabla(string NombreTabla, string consulta)
         {
-
-            coneccion = ObtenerConexion();
-            estadoConeccion = true;
-            if (coneccion == null)
+            conexion = ObtenerConexion();
+            estadoConexion = true;
+            if (conexion == null)
             {
                 throw new Exception("No se pudo establecer la conexión a la base de datos.");
             }
-            using (coneccion)
+            using (conexion)
             {
-                dataAdapter = ObtenerDataAdapter(consulta, coneccion);
+                dataAdapter = ObtenerDataAdapter(consulta, conexion);
                 if (dataAdapter != null)
                 {
                     dataSet = new DataSet();
@@ -147,26 +147,45 @@ namespace AccesoDatos
                 {
                     throw new Exception("No se pudo obtener el DataAdapter para la consulta proporcionada.");
                 }
-                estadoConeccion = false;
+                estadoConexion = false;
             }
             return dataSet.Tables[NombreTabla];
+        }
+
+        public SqlDataReader ObtenerLista()
+        {
+            conexion = ObtenerConexion();
+            estadoConexion = true;
+            string consulta = "SELECT Id_Provincia, DescripcionProvincia FROM Provincia ORDER BY DescripcionProvincia";
+
+            if (conexion == null)
+            {
+                throw new Exception("No se pudo establecer la conexión a la base de datos.");
+            }
+
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            sqlDataReader = comando.ExecuteReader(CommandBehavior.CloseConnection);
+
+            estadoConexion = false;
+
+            return sqlDataReader;
         }
 
         public int EjecutarProcedimientoAlmacenado(string nombreProcedimiento, SqlCommand command)
         {
             filasAfectadas = 0;
-            coneccion = ObtenerConexion();
-            if (coneccion == null)
+            conexion = ObtenerConexion();
+            if (conexion == null)
             {
                 throw new Exception("No se pudo establecer la conexión a la base de datos.");
             }
             else
             {
-                using (coneccion)
+                using (conexion)
                 {
                     sqlCommand = new SqlCommand();
                     sqlCommand = command;
-                    sqlCommand.Connection = coneccion;
+                    sqlCommand.Connection = conexion;
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.CommandText = nombreProcedimiento; // Nombre del procedimiento almacenado            
                     filasAfectadas = sqlCommand.ExecuteNonQuery();
@@ -176,5 +195,4 @@ namespace AccesoDatos
             }
         }
     }
-    
 }
