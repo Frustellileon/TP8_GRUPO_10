@@ -163,13 +163,10 @@ namespace AccesoDatos
                 throw new Exception("No se pudo establecer la conexión a la base de datos.");
             }
 
-            using (conexion)
-            {
-                SqlCommand comando = new SqlCommand(consulta, conexion);
-                sqlDataReader = sqlCommand.ExecuteReader();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            sqlDataReader = comando.ExecuteReader(CommandBehavior.CloseConnection);
 
-                estadoConexion = false;
-            }
+            estadoConexion = false;
 
             return sqlDataReader;
         }

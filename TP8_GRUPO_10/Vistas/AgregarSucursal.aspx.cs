@@ -16,11 +16,18 @@ namespace Vistas
         {
             if (!IsPostBack)
             {
-                ddlProvincias.DataSource = negocioSucursales.getLista();
-                ddlProvincias.DataTextField = "DescripcionProvincia";
-                ddlProvincias.DataValueField = "Id_Provincia";
-                ddlProvincias.DataBind();
+                CargarDDLProvincias();
             }
+        }
+
+        private void CargarDDLProvincias()
+        {
+            ddlProvincia.DataSource = negocioSucursales.getLista();
+            ddlProvincia.DataTextField = "DescripcionProvincia";
+            ddlProvincia.DataValueField = "Id_Provincia";
+            ddlProvincia.DataBind();
+
+            ddlProvincia.Items.Insert(0, new ListItem("--Seleccione una provincia--", "0"));
         }
     }
 }
