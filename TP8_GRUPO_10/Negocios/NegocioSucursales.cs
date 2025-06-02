@@ -21,5 +21,17 @@ namespace Negocios
             return datos.getTablaSucursales();
         }
 
+        public bool eliminarSucursal(int id)
+        {
+            DaoSucursales dao = new DaoSucursales();
+            Sucursal sucursal = new Sucursal();
+            sucursal.IdSucursal = id;
+            int filasAfectadas = dao.EliminarSucursal(sucursal);
+            if (filasAfectadas == 1)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

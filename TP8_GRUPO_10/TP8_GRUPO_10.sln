@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negoci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessoDatos", "Acesso_Datos\AcessoDatos.csproj", "{1552339F-1929-472A-92E0-EB2E349133DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas_Flor", "..\..\..\Documents\Facultad\Cursadas\Cursada 3\Programacion 3\TPs\Mis Practicas\MiPractica_TP_N°7\Vistas\Vistas_Flor.csproj", "{AA27C594-CD94-40D6-BBF0-5C9C32D4F4CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1552339F-1929-472A-92E0-EB2E349133DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1552339F-1929-472A-92E0-EB2E349133DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1552339F-1929-472A-92E0-EB2E349133DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA27C594-CD94-40D6-BBF0-5C9C32D4F4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA27C594-CD94-40D6-BBF0-5C9C32D4F4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA27C594-CD94-40D6-BBF0-5C9C32D4F4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA27C594-CD94-40D6-BBF0-5C9C32D4F4CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

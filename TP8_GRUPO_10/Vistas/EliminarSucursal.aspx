@@ -78,7 +78,7 @@
                         <asp:TextBox ID="txtIngresarSucursal" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style3">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>

@@ -151,6 +151,30 @@ namespace AccesoDatos
             }
             return dataSet.Tables[NombreTabla];
         }
+
+        public int EjecutarProcedimientoAlmacenado(string nombreProcedimiento, SqlCommand command)
+        {
+            filasAfectadas = 0;
+            coneccion = ObtenerConexion();
+            if (coneccion == null)
+            {
+                throw new Exception("No se pudo establecer la conexión a la base de datos.");
+            }
+            else
+            {
+                using (coneccion)
+                {
+                    sqlCommand = new SqlCommand();
+                    sqlCommand = command;
+                    sqlCommand.Connection = coneccion;
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = nombreProcedimiento; // Nombre del procedimiento almacenado            
+                    filasAfectadas = sqlCommand.ExecuteNonQuery();
+                }
+
+                return filasAfectadas;
+            }
+        }
     }
     
 }
