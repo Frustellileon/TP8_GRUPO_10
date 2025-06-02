@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using AccesoDatos;
-using Entidades;
 
 
 
@@ -21,6 +20,12 @@ namespace Negocios
             return datos.getTablaSucursales();
         }
 
+        public SqlDataReader getLista()
+        {
+            DaoSucursales datos = new DaoSucursales();
+            return datos.getListaProvincias();
+        }
+
         public bool eliminarSucursal(int id)
         {
             DaoSucursales dao = new DaoSucursales();
@@ -32,6 +37,5 @@ namespace Negocios
             else
                 return false;
         }
-
     }
 }

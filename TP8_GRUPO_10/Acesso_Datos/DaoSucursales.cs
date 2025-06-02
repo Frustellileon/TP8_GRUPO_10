@@ -29,12 +29,19 @@ namespace AccesoDatos
             return dataTable;
         }
 
+        public SqlDataReader getListaProvincias()
+        {
+            SqlDataReader sqlDataReader = accesoDatos.ObtenerLista();
+            return sqlDataReader;
+        }
+
         public void ArmarParametro_EliminarSucursal(ref SqlCommand command, Sucursal IDsucursal)
         {
             SqlParameter param = new SqlParameter();
             param = command.Parameters.Add("@Id_Sucursal", SqlDbType.Int);
             param.Value = IDsucursal.IdSucursal;
         }
+
         public int EliminarSucursal(Sucursal IDsucursal)
         {
             sqlCommand = new SqlCommand();
@@ -73,7 +80,6 @@ namespace AccesoDatos
                     cmdCrear.ExecuteNonQuery();
                 }
             }
-
         }
     }
 }
