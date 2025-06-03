@@ -133,11 +133,16 @@
                             <td class="auto-style14">
                                 <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                             </td>
+<<<<<<< HEAD
+                            <td class="auto-style15">
+                                <asp:TextBox ID="txtNombreSucursal" runat="server" Height="22px" Width="230px"></asp:TextBox>
+=======
                             <td>
                                 <asp:TextBox ID="txtNombreSucursal" runat="server" Height="22px" Width="230px" ValidationGroup="GrupoA"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="Ingrese un nombre de sucursal." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                         <asp:RegularExpressionValidator ID="revNombreS_largo" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado es demaciado corto/largo." ValidationExpression="^[\s\S]{3,50}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+>>>>>>> Incorporacion de validaciones en formulario AgregarSucursal
                             </td>
                             <td class="auto-style15"></td>
                             <td class="auto-style15"></td>
@@ -194,11 +199,7 @@
                             <td class="auto-style2">&nbsp;</td>
                             <td class="auto-style6">&nbsp;</td>
                             <td>
-<<<<<<< HEAD
-                                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
-=======
                                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="GrupoA" />
->>>>>>> Incorporacion de validaciones en formulario AgregarSucursal
                             </td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
