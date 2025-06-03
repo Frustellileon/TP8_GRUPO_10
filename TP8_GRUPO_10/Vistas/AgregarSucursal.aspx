@@ -213,7 +213,7 @@
                             <td class="auto-style2">&nbsp;</td>
                             <td class="auto-style6">&nbsp;</td>
                             <td>
-                                <asp:Label ID="lblSucursalAgregada" runat="server" Visible="False"></asp:Label>
+                                <asp:Label ID="lblSucursalAgregada" runat="server" Visible="False" Font-Bold="True" ForeColor="#009900"></asp:Label>
                             </td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
