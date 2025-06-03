@@ -214,12 +214,13 @@ namespace AccesoDatos
         }
 
         public void CerrarConexion()
-        {
+        {   
             if (estadoConexion)
             {
                 conexion.Close();
                 estadoConexion = false;
             }
         }
+        //prueba merge
     }
 }
