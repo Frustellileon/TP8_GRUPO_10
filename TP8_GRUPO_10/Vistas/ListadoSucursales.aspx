@@ -112,7 +112,9 @@
                         </tr>
                         <tr>
                             <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style7">&nbsp;</td>
+                            <td class="auto-style7">
+                                <asp:Label ID="lblNotFound" runat="server"></asp:Label>
+                            </td>
                             <td class="auto-style8">&nbsp;</td>
                             <td class="auto-style9">&nbsp;</td>
                             <td>

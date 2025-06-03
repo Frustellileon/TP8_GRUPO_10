@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -40,8 +41,20 @@ namespace Vistas
 
                 sucursal.IdSucursal = Convert.ToInt32(txtFiltroId.Text.Trim());
 
-                gvListadoSucursales.DataSource = negocio.getTablaFiltrada(sucursal);
-                gvListadoSucursales.DataBind();
+                DataTable tablaFiltrada = negocio.getTablaFiltrada(sucursal);
+
+                if (tablaFiltrada.Rows.Count == 0)
+                {
+                    lblNotFound.Text = "Sucursal no existente.";
+                    gvListadoSucursales.DataSource = null;
+                    gvListadoSucursales.DataBind();
+                }
+                else
+                {
+                    lblNotFound.Text = ""; // Oculta mensaje si sí encontró
+                    gvListadoSucursales.DataSource = tablaFiltrada;
+                    gvListadoSucursales.DataBind();
+                }
 
                 txtFiltroId.Text = string.Empty;
             }
