@@ -20,7 +20,7 @@ namespace Vistas
         {
             if (Page.IsValid)
             {
-                if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal.Text)) == true)
+                if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal.Text.Trim())) == true)
                 {
                     lblMensaje.Text = "La sucursal se ha eliminado con éxito";
                 }

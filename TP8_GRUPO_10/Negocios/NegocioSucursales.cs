@@ -28,6 +28,12 @@ namespace Negocios
             return datos.getListaProvincias();
         }
 
+        public DataTable getTablaFiltrada(Sucursal IDSucursal)
+        {
+            DaoSucursales datos = new DaoSucursales();
+            return datos.getTablaFiltrada(IDSucursal);
+        }
+
         public bool eliminarSucursal(int id)
         {
             DaoSucursales dao = new DaoSucursales();

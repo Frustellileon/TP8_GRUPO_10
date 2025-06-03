@@ -35,6 +35,17 @@ namespace AccesoDatos
             return sqlDataReader;
         }
 
+        public DataTable getTablaFiltrada(Sucursal IDSucursal)
+        {
+            const string consulta = consultaBaseSQL + " WHERE Id_Sucursal = @Id_Sucursal";
+            
+            sqlCommand = new SqlCommand(consulta);
+            ArmarParametro_EliminarSucursal(ref sqlCommand, IDSucursal);
+
+            DataTable dataTable = accesoDatos.ObtenerTablaFiltrada("Sucursal", sqlCommand);
+            return dataTable;
+        }
+
         public void ArmarParametro_EliminarSucursal(ref SqlCommand command, Sucursal IDsucursal)
         {
             SqlParameter param = new SqlParameter();
