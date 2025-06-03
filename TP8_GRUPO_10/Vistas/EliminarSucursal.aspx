@@ -83,7 +83,7 @@
                 <tr>
                     <td class="auto-style6">Ingresar ID sucursal:</td>
                     <td class="auto-style7">
-                        <asp:RequiredFieldValidator ID="rflIngresarSucursal" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="No ha ingresado ningún valor" ValidationGroup="GrupoEliminar">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvIngresarSucursal" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="No ha ingresado ningún valor" ValidationGroup="GrupoEliminar">*</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style9">
                         <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar"></asp:TextBox>
