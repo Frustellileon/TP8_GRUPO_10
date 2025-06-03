@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
 using Negocios;
 
 namespace Vistas
@@ -32,7 +33,18 @@ namespace Vistas
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                Sucursal sucursal = new Sucursal();
+                NegocioSucursales negocio = new NegocioSucursales();
 
+                sucursal.IdSucursal = Convert.ToInt32(txtFiltroId.Text.Trim());
+
+                gvListadoSucursales.DataSource = negocio.getTablaFiltrada(sucursal);
+                gvListadoSucursales.DataBind();
+
+                txtFiltroId.Text = string.Empty;
+            }
         }
     }
 }
