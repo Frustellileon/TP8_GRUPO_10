@@ -15,8 +15,7 @@ namespace AccesoDatos
     {
         ///Atributos de la clase
         private AccesoBD accesoDatos = new AccesoBD();         
-        private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
-        private const string consultaSucursalExistencias = "SELECT NombreSucursal AS Nombre, Id_ProvinciaSucursal AS 'ID Provincia', DireccionSucursal AS Direccion FROM Sucursal";
+        private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia"; 
         SqlCommand sqlCommand;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
