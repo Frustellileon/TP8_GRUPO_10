@@ -57,7 +57,7 @@ namespace Vistas
                 sucu.direccionSucursal = txtDireccion.Text.Trim();
                 sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
 
-                if (negocio.VerificarSucursalExistente(sucu, Convert.ToInt32(ddlProvincia.SelectedValue)))
+                if (negocio.VerificarSucursalExistente(sucu))
                 {
                     lblSucursalAgregada.ForeColor = Color.Red;
                     lblSucursalAgregada.Text = "La sucursal ya se encuentra agregada en el sistema";

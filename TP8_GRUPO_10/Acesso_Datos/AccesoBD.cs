@@ -212,5 +212,14 @@ namespace AccesoDatos
             //Devuelvo true
             return true;
         }
+
+        public void CerrarConexion()
+        {
+            if (estadoConexion)
+            {
+                conexion.Close();
+                estadoConexion = false;
+            }
+        }
     }
 }

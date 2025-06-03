@@ -30,11 +30,6 @@ namespace AccesoDatos
             return dataTable;
         }
         
-        public DataTable getTablaVerificacion()
-        {
-            DataTable tabla = accesoDatos.ObtenerTabla("Sucursal", consultaSucursalExistencias);
-            return tabla;
-        }
         public SqlDataReader getListaProvincias()
         {
             SqlDataReader sqlDataReader = accesoDatos.ObtenerLista();
@@ -104,6 +99,18 @@ namespace AccesoDatos
             sqlParameter.Value = sucu.direccionSucursal;
         }
 
+        private void CargarPrametrosVerificacionExistencia(ref SqlCommand comando, Sucursal sucursal)
+        {
+            SqlParameter parametro = new SqlParameter();
+            parametro = comando.Parameters.Add("@NombreSucursal", SqlDbType.VarChar, 100);
+            parametro.Value = sucursal.nombreSucursal;
+            parametro = comando.Parameters.Add("@IdProvincia", SqlDbType.Int);
+            parametro.Value = sucursal.IdProvincia_Sucursal;
+            parametro = comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar, 100);
+            parametro.Value = sucursal.direccionSucursal;
+
+        }
+
         public bool AgregarSucursal(Sucursal sucu)
         {
             //Variables
@@ -117,6 +124,25 @@ namespace AccesoDatos
 
             //Devuelvo
             return accesoDatos.AgregarSucursal(sqlComand);
+        }
+
+        public bool VerificarExistencia(Sucursal sucursal)
+        {
+            string consultaVerificacion = "SELECT * FROM Sucursal WHERE NombreSucursal = @NombreSucursal AND Id_ProvinciaSucursal= @IdProvincia AND DireccionSucursal = @DireccionSucursal";
+            bool ban = false;
+            
+            SqlCommand comando = new SqlCommand(consultaVerificacion, accesoDatos.ObtenerConexion());
+            CargarPrametrosVerificacionExistencia(ref comando, sucursal);
+            SqlDataReader lector = comando.ExecuteReader();
+
+            if(lector.Read())
+            {
+                ban = true;
+            }
+
+            accesoDatos.CerrarConexion();
+
+            return ban;
         }
     }
 }
