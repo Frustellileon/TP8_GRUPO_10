@@ -48,5 +48,15 @@ namespace Negocios
             //Devuelvo
             return dao.AgregarSucursal(sucu);
         }
+
+        public bool VerificarSucursalExistente(Sucursal sucursal)
+        {            
+            DaoSucursales daoSucursales = new DaoSucursales();
+
+            if (daoSucursales.VerificarExistencia(sucursal))
+                return true;
+            else
+                return false;                                  
+        }
     }
 }

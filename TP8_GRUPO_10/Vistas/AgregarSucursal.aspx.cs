@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Entidades;
 using Negocios;
 
@@ -55,15 +57,25 @@ namespace Vistas
                 sucu.direccionSucursal = txtDireccion.Text.Trim();
                 sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
 
+                if (negocio.VerificarSucursalExistente(sucu))
+                {
+                    lblSucursalAgregada.ForeColor = Color.Red;
+                    lblSucursalAgregada.Text = "La sucursal ya se encuentra agregada en el sistema";
+                    return;
+                }
+
+
                 //LLamo a la funcion de agregar sucursal pasandole la variable sucursal
                 if (negocio.CargarSucursal(sucu))
                 {
                     //Muestro un mensaje de confirmación
+                    lblSucursalAgregada.ForeColor = Color.SpringGreen;
                     lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
                 }
                 else
                 {
                     //Muestro un mensaje de error
+                    lblSucursalAgregada.ForeColor = Color.Red;
                     lblSucursalAgregada.Text = "La sucursal no pudo ser agregada";
                 }
 

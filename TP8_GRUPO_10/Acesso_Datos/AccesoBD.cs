@@ -213,6 +213,17 @@ namespace AccesoDatos
             return true;
         }
 
+
+        public void CerrarConexion()
+        {   
+            if (estadoConexion)
+            {
+                conexion.Close();
+                estadoConexion = false;
+            }
+        }
+        //prueba merge
+
         public DataTable ObtenerTablaFiltrada(string nombreTabla, SqlCommand consulta)
         {
             //Creo el data set
@@ -233,5 +244,6 @@ namespace AccesoDatos
             //Devuelvo la tabla
             return dataSet.Tables[nombreTabla];
         }
+
     }
 }

@@ -14,8 +14,8 @@ namespace AccesoDatos
     public class DaoSucursales
     {
         ///Atributos de la clase
-        private AccesoBD accesoDatos = new AccesoBD();
-        private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
+        private AccesoBD accesoDatos = new AccesoBD();         
+        private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia"; 
         SqlCommand sqlCommand;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
@@ -28,7 +28,7 @@ namespace AccesoDatos
             DataTable dataTable = accesoDatos.ObtenerTabla("Sucursal", consultaBaseSQL);
             return dataTable;
         }
-
+        
         public SqlDataReader getListaProvincias()
         {
             SqlDataReader sqlDataReader = accesoDatos.ObtenerLista();
@@ -98,6 +98,18 @@ namespace AccesoDatos
             sqlParameter.Value = sucu.direccionSucursal;
         }
 
+        private void CargarPrametrosVerificacionExistencia(ref SqlCommand comando, Sucursal sucursal)
+        {
+            SqlParameter parametro = new SqlParameter();
+            parametro = comando.Parameters.Add("@NombreSucursal", SqlDbType.VarChar, 100);
+            parametro.Value = sucursal.nombreSucursal;
+            parametro = comando.Parameters.Add("@IdProvincia", SqlDbType.Int);
+            parametro.Value = sucursal.IdProvincia_Sucursal;
+            parametro = comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar, 100);
+            parametro.Value = sucursal.direccionSucursal;
+
+        }
+
         public bool AgregarSucursal(Sucursal sucu)
         {
             //Variables
@@ -111,6 +123,25 @@ namespace AccesoDatos
 
             //Devuelvo
             return accesoDatos.AgregarSucursal(sqlComand);
+        }
+
+        public bool VerificarExistencia(Sucursal sucursal)
+        {
+            string consultaVerificacion = "SELECT * FROM Sucursal WHERE NombreSucursal = @NombreSucursal AND Id_ProvinciaSucursal= @IdProvincia AND DireccionSucursal = @DireccionSucursal";
+            bool ban = false;
+            
+            SqlCommand comando = new SqlCommand(consultaVerificacion, accesoDatos.ObtenerConexion());
+            CargarPrametrosVerificacionExistencia(ref comando, sucursal);
+            SqlDataReader lector = comando.ExecuteReader();
+
+            if(lector.Read())
+            {
+                ban = true;
+            }
+
+            accesoDatos.CerrarConexion();
+
+            return ban;
         }
     }
 }
