@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
 using Negocios;
 
 namespace Vistas
@@ -37,6 +38,26 @@ namespace Vistas
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
             ddlProvincia.SelectedIndex = 0;
+        }
+
+        //Evento click
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //Creo variables
+            Sucursal sucu = new Sucursal();
+            NegocioSucursales negocio = new NegocioSucursales();
+
+            //Cargo lo de los textBox en un objeto sucursal
+            sucu.nombreSucursal = txtNombreSucursal.Text.Trim();
+            sucu.descripcionSucursal = txtDescripcion.Text.Trim();
+            sucu.direccionSucursal = txtDireccion.Text.Trim();
+            sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
+
+            //LLamo a la funcion de agregar sucursal pasandole la variable sucursal
+            negocio.CargarSucursal(sucu);
+
+            //LLamo a la funcion de limpiar campos
+            LimpiarCampos();
         }
     }
 }

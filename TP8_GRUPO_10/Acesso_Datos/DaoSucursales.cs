@@ -81,5 +81,36 @@ namespace AccesoDatos
                 }
             }
         }
+
+        private void CargarParametrosAgregarSucursales(ref SqlCommand cmd, Sucursal sucu)
+        {
+            //Creo el sqlParameter
+            SqlParameter sqlParameter = new SqlParameter();
+
+            //Añado los parametros
+            sqlParameter = cmd.Parameters.Add("@NombreSucursal", SqlDbType.VarChar, 100);
+            sqlParameter.Value = sucu.nombreSucursal;
+            sqlParameter = cmd.Parameters.Add("@DescripcionSucursal", SqlDbType.VarChar, 100);
+            sqlParameter.Value = sucu.descripcionSucursal;
+            sqlParameter = cmd.Parameters.Add("@IdProvinciaSucursal", SqlDbType.Int);
+            sqlParameter.Value = sucu.IdProvincia_Sucursal;
+            sqlParameter = cmd.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar, 100);
+            sqlParameter.Value = sucu.direccionSucursal;
+        }
+
+        public bool AgregarSucursal(Sucursal sucu)
+        {
+            //Variables
+            const string consulta = "INSERT INTO Sucursal ([NombreSucursal], [DescripcionSucursal], [Id_ProvinciaSucursal], [DireccionSucursal]) VALUES (@NombreSucursal, @DescripcionSucursal, @IdProvinciaSucursal, @DireccionSucursal)";
+
+            //Creo el sqlCommand
+            SqlCommand sqlComand = new SqlCommand(consulta);
+
+            //Cargo los parametros
+            CargarParametrosAgregarSucursales(ref sqlComand, sucu);
+
+            //Devuelvo
+            return accesoDatos.AgregarSucursal(sqlComand);
+        }
     }
 }

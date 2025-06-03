@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using AccesoDatos;
+using System.Windows.Forms;
 
 
 
@@ -37,6 +38,15 @@ namespace Negocios
                 return true;
             else
                 return false;
+        }
+
+        public bool CargarSucursal(Sucursal sucu)
+        {
+            //Creo la variable dao
+            DaoSucursales dao = new DaoSucursales();
+
+            //Devuelvo
+            return dao.AgregarSucursal(sucu);
         }
     }
 }
