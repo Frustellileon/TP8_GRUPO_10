@@ -133,8 +133,16 @@
                             <td class="auto-style14">
                                 <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre Sucursal:"></asp:Label>
                             </td>
+<<<<<<< HEAD
                             <td class="auto-style15">
                                 <asp:TextBox ID="txtNombreSucursal" runat="server" Height="22px" Width="230px"></asp:TextBox>
+=======
+                            <td>
+                                <asp:TextBox ID="txtNombreSucursal" runat="server" Height="22px" Width="230px" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="Ingrese un nombre de sucursal." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNombreS_largo" runat="server" ControlToValidate="txtNombreSucursal" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado es demaciado corto/largo." ValidationExpression="^[\s\S]{3,50}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+>>>>>>> Incorporacion de validaciones en formulario AgregarSucursal
                             </td>
                             <td class="auto-style15"></td>
                             <td class="auto-style15"></td>
@@ -145,7 +153,10 @@
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción:"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDescripcion" runat="server" Height="22px" Width="230px"></asp:TextBox>
+                                <asp:TextBox ID="txtDescripcion" runat="server" Height="22px" Width="230px" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="Ingrese una descripcion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDescripcion_largo" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripcion ingresada es demaciado corta/larga." ValidationExpression="^[\s\S]{4,200}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                             </td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
@@ -156,8 +167,9 @@
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia:"></asp:Label>
                             </td>
                             <td class="auto-style12">
-                                <asp:DropDownList ID="ddlProvincia" runat="server" Height="26px" Width="238px">
+                                <asp:DropDownList ID="ddlProvincia" runat="server" Height="26px" Width="238px" ValidationGroup="GrupoA">
                                 </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvDdlProvincia" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Elija una opcion de provincia." InitialValue="0" Display="Dynamic" ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="auto-style12"></td>
                             <td class="auto-style12"></td>
@@ -168,7 +180,10 @@
                                 <asp:Label ID="lblDireccion" runat="server" Text="Direccion:"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDireccion" runat="server" Height="22px" Width="230px"></asp:TextBox>
+                                <asp:TextBox ID="txtDireccion" runat="server" Height="22px" Width="230px" ValidationGroup="GrupoA"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="Ingrese una direccion." ValidationGroup="GrupoA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revDireccion_valida" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La dirección ingresada solo puede contener letras, números, espacios, comas, puntos o guiones, y debe incluir al menos un número." ValidationExpression="^(?=.*\d)[a-zA-Z0-9\s,.-]+$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revDireccion_largo" runat="server" ControlToValidate="txtDireccion" Display="Dynamic" ErrorMessage="La direccion ingresada es demacioado corta/larga." ValidationExpression="^[\s\S]{5,100}$" ValidationGroup="GrupoA">*</asp:RegularExpressionValidator>
                             </td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
@@ -184,15 +199,21 @@
                             <td class="auto-style2">&nbsp;</td>
                             <td class="auto-style6">&nbsp;</td>
                             <td>
+<<<<<<< HEAD
                                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+=======
+                                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" ValidationGroup="GrupoA" />
+>>>>>>> Incorporacion de validaciones en formulario AgregarSucursal
                             </td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td class="auto-style7"></td>
-                            <td class="auto-style8"></td>
-                            <td class="auto-style9"></td>
+                            <td class="auto-style8">&nbsp;</td>
+                            <td class="auto-style9">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="GrupoA" />
+                            </td>
                             <td class="auto-style9"></td>
                             <td class="auto-style9"></td>
                         </tr>
