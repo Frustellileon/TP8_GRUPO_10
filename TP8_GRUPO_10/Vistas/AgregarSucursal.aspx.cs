@@ -43,30 +43,33 @@ namespace Vistas
         //Evento Click
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Creo variables
-            Sucursal sucu = new Sucursal();
-            NegocioSucursales negocio = new NegocioSucursales();
-
-            //Cargo lo de los textBox en un objeto sucursal
-            sucu.nombreSucursal = txtNombreSucursal.Text.Trim();
-            sucu.descripcionSucursal = txtDescripcion.Text.Trim();
-            sucu.direccionSucursal = txtDireccion.Text.Trim();
-            sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
-
-            //LLamo a la funcion de agregar sucursal pasandole la variable sucursal
-            if (negocio.CargarSucursal(sucu))
+            if (Page.IsValid)
             {
-                //Muestro un mensaje de confirmación
-                lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
-            }
-            else
-            {
-                //Muestro un mensaje de error
-                lblSucursalAgregada.Text = "La sucursal no pudo ser agregada";
-            }
+                //Creo variables
+                Sucursal sucu = new Sucursal();
+                NegocioSucursales negocio = new NegocioSucursales();
 
-            //LLamo a la funcion de limpiar campos
-            LimpiarCampos();
+                //Cargo lo de los textBox en un objeto sucursal
+                sucu.nombreSucursal = txtNombreSucursal.Text.Trim();
+                sucu.descripcionSucursal = txtDescripcion.Text.Trim();
+                sucu.direccionSucursal = txtDireccion.Text.Trim();
+                sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
+
+                //LLamo a la funcion de agregar sucursal pasandole la variable sucursal
+                if (negocio.CargarSucursal(sucu))
+                {
+                    //Muestro un mensaje de confirmación
+                    lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
+                }
+                else
+                {
+                    //Muestro un mensaje de error
+                    lblSucursalAgregada.Text = "La sucursal no pudo ser agregada";
+                }
+
+                //LLamo a la funcion de limpiar campos
+                LimpiarCampos();
+            }
         }
     }
 }
