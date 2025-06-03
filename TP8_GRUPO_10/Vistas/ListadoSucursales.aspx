@@ -104,7 +104,7 @@
                                 <asp:RequiredFieldValidator ID="rfvFiltro" runat="server" ControlToValidate="txtFiltroId" ErrorMessage="Debe ingresar un ID al filtro." ValidateRequestMode="Enabled" ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="auto-style13">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ValidationGroup="Filtro" />
+                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ValidationGroup="Filtro" OnClick="btnFiltrar_Click" />
                             </td>
                             <td class="auto-style14">
                                 <asp:Button ID="btnMostrarTodos" runat="server" Text="MostrarTodos" />

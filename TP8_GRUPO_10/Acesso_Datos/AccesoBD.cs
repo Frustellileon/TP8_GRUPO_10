@@ -213,6 +213,7 @@ namespace AccesoDatos
             return true;
         }
 
+
         public void CerrarConexion()
         {   
             if (estadoConexion)
@@ -222,5 +223,27 @@ namespace AccesoDatos
             }
         }
         //prueba merge
+
+        public DataTable ObtenerTablaFiltrada(string nombreTabla, SqlCommand consulta)
+        {
+            //Creo el data set
+            DataSet dataSet = new DataSet();
+
+            //Obtengo lo necesario usando los metodos anteriores
+            SqlConnection connection = ObtenerConexion();
+            consulta.Connection = connection;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta);
+
+            //Relleno el dataset
+            dataAdapter.Fill(dataSet, nombreTabla);
+
+            //Cierro
+            connection.Close();
+            estadoConexion = false;
+
+            //Devuelvo la tabla
+            return dataSet.Tables[nombreTabla];
+        }
+
     }
 }
