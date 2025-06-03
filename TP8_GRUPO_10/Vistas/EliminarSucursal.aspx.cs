@@ -20,7 +20,7 @@ namespace Vistas
         {
             if (Page.IsValid)
             {
-                if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal)) == true)
+                if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal.Text)) == true)
                 {
                     lblMensaje.Text = "La sucursal se ha eliminado con éxito";
                 }
@@ -31,7 +31,6 @@ namespace Vistas
                 // Limpio el textbox
                 txtIngresarSucursal.Text = string.Empty;
             }
-
         }
     }
 }
