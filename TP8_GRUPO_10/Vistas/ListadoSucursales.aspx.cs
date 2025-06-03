@@ -21,10 +21,7 @@ namespace Vistas
 
             if (!IsPostBack)
             {
-                // Cargar la lista de sucursales al cargar la página por primera vez
-                gvListadoSucursales.DataSource = negocioSucursales.getTabla();
-                gvListadoSucursales.DataBind();
-
+                CargarTodasLasSucursales();
             }
             else
             {
@@ -58,6 +55,17 @@ namespace Vistas
 
                 txtFiltroId.Text = string.Empty;
             }
+        }
+
+        private void CargarTodasLasSucursales()
+        {
+            gvListadoSucursales.DataSource = negocioSucursales.getTabla();
+            gvListadoSucursales.DataBind();
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            CargarTodasLasSucursales();
         }
     }
 }
