@@ -14,8 +14,9 @@ namespace AccesoDatos
     public class DaoSucursales
     {
         ///Atributos de la clase
-        private AccesoBD accesoDatos = new AccesoBD();
+        private AccesoBD accesoDatos = new AccesoBD();         
         private const string consultaBaseSQL = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_ProvinciaSucursal = Id_Provincia";
+        private const string consultaSucursalExistencias = "SELECT NombreSucursal AS Nombre, Id_ProvinciaSucursal AS 'ID Provincia', DireccionSucursal AS Direccion FROM Sucursal";
         SqlCommand sqlCommand;
 
         ///----------------------------------------------------------  Funciones de la clase  --------------------------------------------------------------------------
@@ -28,7 +29,12 @@ namespace AccesoDatos
             DataTable dataTable = accesoDatos.ObtenerTabla("Sucursal", consultaBaseSQL);
             return dataTable;
         }
-
+        
+        public DataTable getTablaVerificacion()
+        {
+            DataTable tabla = accesoDatos.ObtenerTabla("Sucursal", consultaSucursalExistencias);
+            return tabla;
+        }
         public SqlDataReader getListaProvincias()
         {
             SqlDataReader sqlDataReader = accesoDatos.ObtenerLista();

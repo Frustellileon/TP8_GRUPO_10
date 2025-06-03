@@ -48,5 +48,24 @@ namespace Negocios
             //Devuelvo
             return dao.AgregarSucursal(sucu);
         }
+
+        public bool VerificarSucursalExistente(Sucursal sucu, int idProvincia)
+        {            
+            DaoSucursales daoSucursales = new DaoSucursales();
+
+            foreach (DataRow fila in ((DataTable)daoSucursales.getTablaVerificacion()).Rows)
+            {
+                if ((string)fila["Nombre"] == sucu.nombreSucursal)
+                {
+                    if ((string)fila["Direccion"] == sucu.direccionSucursal)
+                    {
+                        if ((int)fila["ID Provincia"] == idProvincia)
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }
