@@ -54,13 +54,19 @@ namespace Vistas
             sucu.IdProvincia_Sucursal = Convert.ToInt32(ddlProvincia.SelectedValue);
 
             //LLamo a la funcion de agregar sucursal pasandole la variable sucursal
-            negocio.CargarSucursal(sucu);
+            if (negocio.CargarSucursal(sucu))
+            {
+                //Muestro un mensaje de confirmación
+                lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
+            }
+            else
+            {
+                //Muestro un mensaje de error
+                lblSucursalAgregada.Text = "La sucursal no pudo ser agregada";
+            }
 
             //LLamo a la funcion de limpiar campos
             LimpiarCampos();
-
-            //Muestro un mensaje de confirmación
-            lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
         }
     }
 }
