@@ -40,7 +40,7 @@ namespace Vistas
             ddlProvincia.SelectedIndex = 0;
         }
 
-        //Evento click
+        //Evento Click
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             //Creo variables
@@ -58,6 +58,9 @@ namespace Vistas
 
             //LLamo a la funcion de limpiar campos
             LimpiarCampos();
+
+            //Muestro un mensaje de confirmación
+            lblSucursalAgregada.Text = "¡Sucursal agregada con éxito!";
         }
     }
 }
