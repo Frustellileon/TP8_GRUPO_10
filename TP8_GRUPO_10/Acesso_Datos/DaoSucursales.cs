@@ -58,7 +58,7 @@ namespace AccesoDatos
             sqlCommand = new SqlCommand();
             ArmarParametro_EliminarSucursal(ref sqlCommand, IDsucursal);
             ValidarOCrearProcedimientoEliminarSucursal();
-            int resultado = accesoDatos.EjecutarProcedimientoAlmacenado("EliminarSucursal", sqlCommand);
+            int resultado = accesoDatos.EjecutarProcedimientoAlmacenado("EliminarSucursal_Grupo10", sqlCommand);
             return resultado;
         }
 
@@ -71,7 +71,7 @@ namespace AccesoDatos
                 string consultaExiste = @"
                     SELECT COUNT(*) 
                     FROM sys.objects 
-                    WHERE type = 'P' AND name = 'EliminarSucursal'";
+                    WHERE type = 'P' AND name = 'EliminarSucursal_Grupo10'";
 
                 SqlCommand cmdExiste = new SqlCommand(consultaExiste, conexion);
                 int cantidad = (int)cmdExiste.ExecuteScalar();
@@ -80,11 +80,15 @@ namespace AccesoDatos
                 {
                     // Crear el procedimiento si no existe
                     string crearProc = @"
-                        CREATE PROCEDURE EliminarSucursal
+                        CREATE PROCEDURE EliminarSucursal_Grupo10
                             @Id_Sucursal INT
                         AS
                         BEGIN
                             DELETE FROM Sucursal WHERE Id_Sucursal = @Id_Sucursal
+                            
+                            DECLARE @MaxId INT;
+                            SELECT @MaxId = MAX(Id_Sucursal) FROM Sucursal;
+                            DBCC CHECKIDENT ('Sucursal', RESEED, @MaxId);
                         END";
 
                     SqlCommand cmdCrear = new SqlCommand(crearProc, conexion);

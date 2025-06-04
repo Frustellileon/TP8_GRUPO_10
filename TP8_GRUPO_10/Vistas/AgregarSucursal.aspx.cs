@@ -21,6 +21,10 @@ namespace Vistas
             {
                 CargarDDLProvincia();
             }
+            else
+            {
+                lblSucursalAgregada.Text = string.Empty;
+            }
         }
 
         private void CargarDDLProvincia()
