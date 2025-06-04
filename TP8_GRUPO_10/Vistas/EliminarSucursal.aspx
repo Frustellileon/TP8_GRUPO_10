@@ -6,49 +6,76 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style6 {
-            width: 245px;
-        }
-        .auto-style7 {
-            width: 15px;
-        }
-        .auto-style9 {
-            width: 161px;
-        }
-        .auto-style12 {
-            width: 471px;
-        }
-        .auto-style13 {
-            width: 183px;
-        }
-        .auto-style14 {
-            width: 245px;
-            height: 24px;
-        }
-        .auto-style15 {
-            width: 15px;
-            height: 24px;
-        }
-        .auto-style16 {
-            width: 161px;
-            height: 24px;
-        }
-        .auto-style17 {
-            width: 183px;
-            height: 24px;
-        }
-        .auto-style18 {
-            width: 471px;
-            height: 24px;
-        }
-        .auto-style19 {
-            height: 24px;
-        }
-    </style>
+ <style type="text/css">
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 40px;
+    }
+
+    table.auto-style1 {
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 30px;
+        width: 700px;
+    }
+
+    .auto-style6 {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        padding-bottom: 10px;
+    }
+
+    asp\:TextBox {
+        padding: 5px;
+        font-size: 14px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    asp\:Button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    asp\:Button:hover {
+        background-color: #45a049;
+    }
+
+    asp\:Label {
+        font-size: 14px;
+    }
+
+    asp\:ValidationSummary {
+        color: #cc0000;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    asp\:RangeValidator, asp\:RequiredFieldValidator {
+        color: #cc0000;
+        font-size: 13px;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+</style>
+
 </head>
 <body>
     <form id="form1" runat="server">
