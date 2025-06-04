@@ -22,11 +22,11 @@ namespace Vistas
             {
                 if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal.Text.Trim())) == true)
                 {
-                    lblMensaje.Text = "La sucursal se ha eliminado con éxito";
+                    lblMensaje.Text = "La sucursal se ha eliminado con éxito.";
                 }
                 else
                 {
-
+                    lblMensaje.Text = "No existe la sucursal ingresada.";
                 }
                 // Limpio el textbox
                 txtIngresarSucursal.Text = string.Empty;

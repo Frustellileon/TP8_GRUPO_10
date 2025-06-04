@@ -86,7 +86,7 @@
                         <asp:RequiredFieldValidator ID="rfvIngresarSucursal" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="No ha ingresado ningún valor" ValidationGroup="GrupoEliminar">*</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style9">
-                        <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar"></asp:TextBox>
+                        <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar" TextMode="Number"></asp:TextBox>
                     </td>
                     <td class="auto-style13">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" />
