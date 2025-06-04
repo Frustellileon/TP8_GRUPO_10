@@ -66,6 +66,8 @@ namespace Vistas
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarTodasLasSucursales();
+            lblNotFound.Text = string.Empty;
+            txtFiltroId.Text = string.Empty;
         }
     }
 }
