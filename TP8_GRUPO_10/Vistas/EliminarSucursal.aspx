@@ -25,6 +25,29 @@
         .auto-style13 {
             width: 183px;
         }
+        .auto-style14 {
+            width: 245px;
+            height: 24px;
+        }
+        .auto-style15 {
+            width: 15px;
+            height: 24px;
+        }
+        .auto-style16 {
+            width: 161px;
+            height: 24px;
+        }
+        .auto-style17 {
+            width: 183px;
+            height: 24px;
+        }
+        .auto-style18 {
+            width: 471px;
+            height: 24px;
+        }
+        .auto-style19 {
+            height: 24px;
+        }
     </style>
 </head>
 <body>
@@ -71,14 +94,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style19"></td>
                 </tr>
                 <tr>
                     <td class="auto-style6">Ingresar ID sucursal:</td>
@@ -91,7 +114,9 @@
                     <td class="auto-style13">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" />
                     </td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12">
+                        <asp:RangeValidator ID="rvSucursales" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="Número fuera de rango permitido." MaximumValue="200" MinimumValue="1" Type="Integer"></asp:RangeValidator>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
