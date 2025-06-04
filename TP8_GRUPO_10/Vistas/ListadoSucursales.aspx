@@ -51,6 +51,25 @@
         .auto-style14 {
             height: 30px;
         }
+        .auto-style16 {
+            width: 26px;
+        }
+        .auto-style17 {
+            width: 64px;
+        }
+        .auto-style23 {
+            height: 30px;
+            width: 78px;
+        }
+        .auto-style25 {
+            width: 86px;
+        }
+        .auto-style26 {
+            width: 158px;
+        }
+        .auto-style28 {
+            width: 166px;
+        }
     </style>
 </head>
 <body>
@@ -125,6 +144,84 @@
         </div>
         <asp:GridView ID="gvListadoSucursales" runat="server">
         </asp:GridView>
+        <asp:Panel ID="Panel1" runat="server">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style23">
+                        &nbsp;</td>
+                    <td class="auto-style26">
+                        &nbsp;</td>
+                    <td class="auto-style16">
+                        &nbsp;</td>
+                    <td class="auto-style17">
+                        &nbsp;</td>
+                    <td class="auto-style28">
+                        &nbsp;</td>
+                    <td class="auto-style25">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style23">
+                        <asp:Label ID="lblIdSucursal" runat="server" Text="ID Sucursal"></asp:Label>
+                    </td>
+                    <td class="auto-style26">
+                        <asp:DropDownList ID="ddlIdSucursal" runat="server" Height="20px" Width="79px">
+                            <asp:ListItem Value="igual a">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="mayor a">Mayor a:</asp:ListItem>
+                            <asp:ListItem Value="menor a">Menor a:</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:TextBox ID="txtIdSucursal" runat="server" Width="54px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style16">
+                        <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                    </td>
+                    <td class="auto-style17">
+                        <asp:DropDownList ID="ddlNombre" runat="server" Height="20px">
+                            <asp:ListItem Value="contiene">Contiene:</asp:ListItem>
+                            <asp:ListItem Value="empieza con">Empieza con:</asp:ListItem>
+                            <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style28">
+                        <asp:TextBox ID="txtNombre" runat="server" Width="145px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style25">
+                        <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDescripcion" runat="server" Height="20px">
+                            <asp:ListItem Value="contiene">Contiene:</asp:ListItem>
+                            <asp:ListItem Value="empieza con">Empieza con:</asp:ListItem>
+                            <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:TextBox ID="txtDescripcion" runat="server" Width="145px"></asp:TextBox>
+                        <asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="Button1_Click" Text="Buscar" Width="91px" />
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style16">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style28">
+                        <asp:TextBox ID="txtPrueba" runat="server" style="height: 22px" Width="142px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style25">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </asp:Panel>
     </form>
 </body>
 </html>

@@ -32,5 +32,10 @@ namespace Vistas
                 txtIngresarSucursal.Text = string.Empty;
             }
         }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
