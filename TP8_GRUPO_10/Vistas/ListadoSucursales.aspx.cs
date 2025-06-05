@@ -42,18 +42,19 @@ namespace Vistas
 
                 if (tablaFiltrada.Rows.Count == 0)
                 {
-                    lblNotFound.Text = "Sucursal no existente.";
+                    lblNotFound.Text = "Sucursal no existente.";                    
                     gvListadoSucursales.DataSource = null;
                     gvListadoSucursales.DataBind();
                 }
                 else
-                {
-                    lblNotFound.Text = ""; // Oculta mensaje si sí encontró
+                {                    
+                    lblNotFound.Text = ""; // Oculta mensaje si sí encontró                    
                     gvListadoSucursales.DataSource = tablaFiltrada;
                     gvListadoSucursales.DataBind();
                 }
-
+                
                 txtFiltroId.Text = string.Empty;
+                lblFiltrosVacios.Text = string.Empty;
             }
         }
 
@@ -66,45 +67,59 @@ namespace Vistas
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarTodasLasSucursales();
+            lblFiltrosVacios.Text = string.Empty;
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        private bool FiltrosVacios()
         {
-           
+            if(!Helper.txtRellenado(txtIdSucursal.Text) &&
+               !Helper.txtRellenado(txtNombre.Text) &&
+               !Helper.txtRellenado(txtDescripcion.Text))
+            {   
+                return true;
+            }
+
+            return false;
         }
 
         private string VerificarFiltroAvanzado()
         {
-            string filtro = " WHERE ";
-
-            if (Helper.txtRellenado(txtIdSucursal.Text))
+            if (FiltrosVacios())
             {
-                string filtroID = ddlIdSucursal.SelectedValue;
-
-                switch (filtroID)
-                {
-                    case "igual a":
-                        filtro += "IdSucursal = " + txtIdSucursal.Text;
-                        break;
-                    case "mayor a":
-                        filtro += "IdSucursal > " + txtIdSucursal.Text;
-                        break;
-                    default:
-                        filtro += "IdSucursal < " + txtIdSucursal.Text;
-                        break;
-                }
+                return string.Empty;
             }
 
+            string filtro = " WHERE ";
+            string parametro;                                                   
+                                                                                
+            if (Helper.txtRellenado(txtIdSucursal.Text))                        
+            {
+                parametro = ddlIdSucursal.SelectedValue;
+
+                switch (parametro)
+                {
+                    case "igual a":
+                        filtro += "Id_Sucursal = " + txtIdSucursal.Text;
+                        break;
+                    case "mayor a":
+                        filtro += "Id_Sucursal > " + txtIdSucursal.Text;
+                        break;
+                    default:
+                        filtro += "Id_Sucursal < " + txtIdSucursal.Text;        
+                        break;                                                   
+                }                                                                
+            }
+                                                                                             //
             if (Helper.txtRellenado(txtNombre.Text))
             {
-                string filtroNombre = ddlNombre.SelectedValue;
+                parametro = ddlNombre.SelectedValue;
 
                 if (Helper.txtRellenado(txtIdSucursal.Text))
                 {
                     filtro += " AND ";
                 }
                 
-                switch (filtroNombre)
+                switch (parametro)
                 {
                     case "contiene":
                         filtro += "NombreSucursal LIKE '%" + txtNombre.Text + "%'";
@@ -116,14 +131,13 @@ namespace Vistas
 
                     default:
                         filtro += "NombreSucursal LIKE '%" + txtNombre.Text + "'";
-                        break;
-                }
-
+                        break;                                                      
+                }                                                                   
             }
-
+                                                                                             //
             if (Helper.txtRellenado(txtDescripcion.Text))
             {
-                string filtroDescripcion = ddlDescripcion.SelectedValue;
+                parametro = ddlDescripcion.SelectedValue;
 
                 if(Helper.txtRellenado(txtIdSucursal.Text) ||
                    Helper.txtRellenado(txtNombre.Text))
@@ -131,7 +145,7 @@ namespace Vistas
                     filtro += " AND ";
                 }
 
-                switch (filtroDescripcion)
+                switch (parametro)
                 {
                     case "contiene":
                         filtro += "DescripcionSucursal LIKE '%" + txtDescripcion.Text + "%'";
@@ -145,19 +159,28 @@ namespace Vistas
                         filtro += "DescripcionSucursal LIKE '%" + txtDescripcion.Text + "'";
                         break;
                 }
+            }            
 
-            }
             return filtro; 
         }
+        
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (FiltrosVacios())
+            {
+                lblFiltrosVacios.Text = "No se llenó ningún filtro.";
+                return;
+            }
+            else
+            {
+                lblFiltrosVacios.Text = string.Empty;
+            }
+
             NegocioSucursales negocio = new NegocioSucursales();
-
-
             string filtroAvanzado = VerificarFiltroAvanzado();
-
-            txtPrueba.Text = filtroAvanzado;
+            gvListadoSucursales.DataSource = negocio.getTablaFiltroAvanzado(filtroAvanzado);
+            gvListadoSucursales.DataBind();
         }
     }
 }

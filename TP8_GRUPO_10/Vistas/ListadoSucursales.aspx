@@ -200,7 +200,7 @@
                             <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
                         </asp:DropDownList>
                         <asp:TextBox ID="txtDescripcion" runat="server" Width="145px"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="Button1_Click" Text="Buscar" Width="91px" />
+                        <asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="btnBuscar_Click" Text="Buscar" Width="91px" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -208,12 +208,13 @@
                 </tr>
                 <tr>
                     <td class="auto-style23">&nbsp;</td>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:Label ID="lblFiltrosVacios" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style28">
-                        <asp:TextBox ID="txtPrueba" runat="server" style="height: 22px" Width="142px"></asp:TextBox>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style25">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
