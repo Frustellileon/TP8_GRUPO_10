@@ -77,6 +77,15 @@
 </style>
 
 </head>
+    <script>
+    function validarYConfirmar() {
+        var txt = document.getElementById("txtIngresarSucursal");
+        if (txt.value.length === 0) {
+            return true;
+        }
+        return confirm("¿Estás seguro que querés eliminar esta sucursal?");
+    }
+    </script>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -136,10 +145,10 @@
                         <asp:RequiredFieldValidator ID="rfvIngresarSucursal" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="No ha ingresado ningún valor" ValidationGroup="GrupoEliminar">*</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style9">
-                        <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar" TextMode="Number" ></asp:TextBox>
                     </td>
                     <td class="auto-style13">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClientClick="return confirm('¿Estás seguro que querés eliminar esta sucursal?');" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClientClick="return validarYConfirmar();" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" ClientIDMode="Static"/>
                     </td>
                     <td class="auto-style12">
                         <asp:RangeValidator ID="rvSucursales" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="Número fuera de rango permitido." MaximumValue="200" MinimumValue="1" Type="Integer"></asp:RangeValidator>
