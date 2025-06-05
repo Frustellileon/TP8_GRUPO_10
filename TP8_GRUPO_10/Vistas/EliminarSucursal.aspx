@@ -139,7 +139,7 @@
                         <asp:TextBox ID="txtIngresarSucursal" runat="server" ValidationGroup="GrupoEliminar" TextMode="Number"></asp:TextBox>
                     </td>
                     <td class="auto-style13">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClientClick="return confirm('¿Estás seguro que querés eliminar esta sucursal?');" OnClick="btnEliminar_Click" ValidationGroup="GrupoEliminar" />
                     </td>
                     <td class="auto-style12">
                         <asp:RangeValidator ID="rvSucursales" runat="server" ControlToValidate="txtIngresarSucursal" Display="Dynamic" ErrorMessage="Número fuera de rango permitido." MaximumValue="200" MinimumValue="1" Type="Integer"></asp:RangeValidator>
