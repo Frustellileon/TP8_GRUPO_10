@@ -67,6 +67,7 @@ namespace Vistas
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarTodasLasSucursales();
+
             lblFiltrosVacios.Text = string.Empty;
         }
 
@@ -181,6 +182,10 @@ namespace Vistas
             string filtroAvanzado = VerificarFiltroAvanzado();
             gvListadoSucursales.DataSource = negocio.getTablaFiltroAvanzado(filtroAvanzado);
             gvListadoSucursales.DataBind();
+
+            lblNotFound.Text = string.Empty;
+            txtFiltroId.Text = string.Empty;
+
         }
     }
 }

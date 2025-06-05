@@ -18,19 +18,35 @@ namespace Vistas
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (!Page.IsValid)
+                return;
+
+            int idSucursal;
+            if (!int.TryParse(txtIngresarSucursal.Text.Trim(), out idSucursal))
             {
-                if (negocioSucursales.eliminarSucursal(Convert.ToInt32(txtIngresarSucursal.Text.Trim())) == true)
-                {
-                    lblMensaje.Text = "La sucursal se ha eliminado con éxito.";
-                }
-                else
-                {
-                    lblMensaje.Text = "No existe la sucursal ingresada.";
-                }
-                // Limpio el textbox
-                txtIngresarSucursal.Text = string.Empty;
+                rvSucursales.IsValid = false;
+                rvSucursales.ErrorMessage = "Ingrese un número válido entre 1 y 200.";
+                return;
             }
+
+            /// Verificamos si el número está dentro del rango lógico
+            if (idSucursal < 1 || idSucursal > 200)
+            {
+                rvSucursales.IsValid = false;
+                rvSucursales.ErrorMessage = "El número debe estar entre 1 y 200.";
+                return;
+            }
+
+            if (negocioSucursales.eliminarSucursal(idSucursal))
+            {
+                lblMensaje.Text = "La sucursal se ha eliminado con éxito.";
+            }
+            else
+            {
+                lblMensaje.Text = "No existe la sucursal ingresada.";
+            }
+
+            txtIngresarSucursal.Text = string.Empty;
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
