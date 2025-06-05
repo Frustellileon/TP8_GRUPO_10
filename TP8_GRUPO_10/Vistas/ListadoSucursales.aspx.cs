@@ -103,7 +103,7 @@ namespace Vistas
                 {
                     filtro += " AND ";
                 }
-
+                departments
                 switch (filtroNombre)
                 {
                     case "contiene":
