@@ -13,9 +13,13 @@ namespace Vistas
         NegocioSucursales negocioSucursales = new NegocioSucursales();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                lblMensaje.Text = string.Empty;
+            }
 
         }
-
+        
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             if (!Page.IsValid)

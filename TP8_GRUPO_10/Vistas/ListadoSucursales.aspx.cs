@@ -25,7 +25,7 @@ namespace Vistas
             }
             else
             {
-                
+                lblListadoSucursales.Text = string.Empty;
             }
         }
 
