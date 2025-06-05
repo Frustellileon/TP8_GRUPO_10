@@ -46,6 +46,18 @@ namespace AccesoDatos
             return dataTable;
         }
 
+        public DataTable getTablaFiltroAvanzado(string filtroAvanzado)
+        {
+            string consultaAvanzada = consultaBaseSQL;
+            consultaAvanzada += filtroAvanzado;
+
+            DataSet ds = new DataSet();
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(consultaAvanzada, accesoDatos.ObtenerConexion());
+            adaptador.Fill(ds, "Sucursal");
+
+            return ds.Tables["Sucursal"];                        
+        }
         public void ArmarParametro_EliminarSucursal(ref SqlCommand command, Sucursal IDsucursal)
         {
             SqlParameter param = new SqlParameter();
