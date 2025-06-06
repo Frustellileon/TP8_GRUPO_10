@@ -14,65 +14,37 @@
         .auto-style3 {
             width: 151px;
         }
-        .auto-style4 {
-            width: 172px;
-        }
         .auto-style5 {
-            width: 202px;
+            width: 391px;
         }
-        .auto-style6 {
-            width: 237px;
+        body {
+            background-color: #f3f3f3; 
+            padding: 40px; 
         }
-        .auto-style7 {
-            width: 269px;
+        table.auto-style1 {
+            margin: 0 auto 14 auto; /* Centra la tabla horizontalmente en la página. */
+            background-color: #ffffff; /* Le da el fondo blanco. */
+            border-radius: 12px; /* Redondea las esquinas. */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Crea una sombra sutil para darle un efecto "flotante". */
+            padding: 30px; /* Añade espacio interno para que el contenido no se pegue a los bordes del rectángulo blanco. */
+            width: 1175px; /* Fija un ancho para el contenedor. */
+            height: 57px;
         }
-        .auto-style8 {
-            width: 16px;
+
+        .auto-style40 {
+            width: 908px;
         }
-        .auto-style9 {
-            width: 64px;
+        .auto-style41 {
+            width: 1184px;
         }
-        .auto-style10 {
-            width: 237px;
+        .auto-style42 {
+            width: 1184px;
             height: 30px;
         }
-        .auto-style11 {
-            width: 269px;
-            height: 30px;
+        .auto-style43 {
+            width: 353px;
         }
-        .auto-style12 {
-            width: 16px;
-            height: 30px;
-        }
-        .auto-style13 {
-            width: 64px;
-            height: 30px;
-        }
-        .auto-style14 {
-            height: 30px;
-        }
-        .auto-style16 {
-            width: 26px;
-        }
-        .auto-style17 {
-            width: 64px;
-        }
-        .auto-style25 {
-            width: 86px;
-        }
-        .auto-style26 {
-            width: 158px;
-        }
-        .auto-style31 {
-            width: 626px;
-        }
-        .auto-style32 {
-            width: 177px;
-        }
-        .auto-style33 {
-            height: 30px;
-            width: 121px;
-        }
+
     </style>
 </head>
 <body>
@@ -81,13 +53,13 @@
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style3">&nbsp;</td>
-                                <td class="auto-style4">
+                                <td class="auto-style43">
                                     <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                                 </td>
                                 <td class="auto-style5">
                                     <asp:HyperLink ID="hpListadoSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                                 </td>
-                                <td>
+                                <td class="auto-style40">
                                     <asp:HyperLink ID="hpEliminarSucursal" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                                 </td>
                                 <td>&nbsp;</td>
@@ -95,140 +67,76 @@
                         </table>
                     <table class="auto-style1">
                         <tr>
-                            <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style7">&nbsp;</td>
-                            <td class="auto-style8">&nbsp;</td>
-                            <td class="auto-style9">&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style6">
-                                <asp:Label ID="lblListadoSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Listado de sucursales"></asp:Label>
+                            <td class="auto-style41">
+                                <asp:Label ID="lblListadoSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Listado de sucursales" Width="400px"></asp:Label>
                             </td>
-                            <td class="auto-style7">&nbsp;</td>
-                            <td class="auto-style8">&nbsp;</td>
-                            <td class="auto-style9">&nbsp;</td>
-                            <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style7">&nbsp;</td>
-                            <td class="auto-style8">&nbsp;</td>
-                            <td class="auto-style9">&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="auto-style41">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style10">Búsqueda ingrese ID sucursal:</td>
-                            <td class="auto-style11">
-                                <asp:TextBox ID="txtFiltroId" runat="server" ValidationGroup="Filtro" Width="250px" TextMode="Number"></asp:TextBox>
-                            </td>
-                            <td class="auto-style12">
+                            <td class="auto-style42">Búsqueda ingrese ID sucursal:
+                                <asp:TextBox ID="txtFiltroId" runat="server" ValidationGroup="Filtro" Width="162px" TextMode="Number"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvFiltro" runat="server" ControlToValidate="txtFiltroId" ErrorMessage="Debe ingresar un ID al filtro." ValidateRequestMode="Enabled" ValidationGroup="Filtro">*</asp:RequiredFieldValidator>
-                            </td>
-                            <td class="auto-style13">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ValidationGroup="Filtro" OnClick="btnFiltrar_Click" />
-                            </td>
-                            <td class="auto-style14">
+                            &nbsp;<asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ValidationGroup="Filtro" OnClick="btnFiltrar_Click" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="btnMostrarTodos" runat="server" Text="MostrarTodos" OnClick="btnMostrarTodos_Click" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style6">&nbsp;</td>
-                            <td class="auto-style7">
+                            &nbsp;&nbsp;
+                                <asp:ValidationSummary ID="vsFiltro" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Filtro" />
                                 <asp:Label ID="lblNotFound" runat="server"></asp:Label>
                             </td>
-                            <td class="auto-style8">&nbsp;</td>
-                            <td class="auto-style9">&nbsp;</td>
-                            <td>
-                                <asp:ValidationSummary ID="vsFiltro" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="Filtro" />
-                            </td>
                         </tr>
-            </table>
+                        </table>
         </div>
-        <asp:GridView ID="gvListadoSucursales" runat="server">
-        </asp:GridView>
-        <asp:Panel ID="Panel1" runat="server" Width="1402px">
+        <asp:Panel ID="Panel2" runat="server">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style33">
-                        &nbsp;</td>
-                    <td class="auto-style26">
-                        &nbsp;</td>
-                    <td class="auto-style16">
-                        &nbsp;</td>
-                    <td class="auto-style17">
-                        &nbsp;</td>
-                    <td class="auto-style32">
-                        &nbsp;</td>
-                    <td class="auto-style25">
-                        &nbsp;</td>
-                    <td class="auto-style31">
-                        &nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:GridView ID="gvListadoSucursales" runat="server">
+                        </asp:GridView>
+                    </td>
+                </tr>
+                <tr>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style33">
+                    <td>
                         <asp:Label ID="lblIdSucursal" runat="server" Text="ID Sucursal"></asp:Label>
-                    </td>
-                    <td class="auto-style26">
-                        <asp:DropDownList ID="ddlIdSucursal" runat="server" Height="20px" Width="79px">
+                        &nbsp;<asp:DropDownList ID="ddlIdSucursal" runat="server" Height="20px" Width="105px">
                             <asp:ListItem Value="igual a">Igual a:</asp:ListItem>
                             <asp:ListItem Value="mayor a">Mayor a:</asp:ListItem>
                             <asp:ListItem Value="menor a">Menor a:</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:TextBox ID="txtIdSucursal" runat="server" Width="54px"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="revIDSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID deve ser numerico y entero." ValidationExpression="^\d+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
-                    </td>
-                    <td class="auto-style16">
+                        &nbsp;<asp:TextBox ID="txtIdSucursal" runat="server" Width="54px"></asp:TextBox>
+                        &nbsp;<asp:RegularExpressionValidator ID="revIDSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID deve ser numerico y entero." ValidationExpression="^\d+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
+                        &nbsp;&nbsp;
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                    </td>
-                    <td class="auto-style17">
-                        <asp:DropDownList ID="ddlNombre" runat="server" Height="20px">
-                            <asp:ListItem Value="contiene">Contiene:</asp:ListItem>
-                            <asp:ListItem Value="empieza con">Empieza con:</asp:ListItem>
-                            <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                    <td class="auto-style32">
-                        <asp:TextBox ID="txtNombre" runat="server" Width="145px"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
-                    </td>
-                    <td class="auto-style25">
+                        &nbsp;Cambios e&nbsp;<asp:TextBox ID="txtNombre" runat="server" Width="145px"></asp:TextBox>
+                        &nbsp;<asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
+                        &nbsp;&nbsp;
                         <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
-                    </td>
-                    <td class="auto-style31">
-                        <asp:DropDownList ID="ddlDescripcion" runat="server" Height="20px">
+                        &nbsp;<asp:DropDownList ID="ddlDescripcion" runat="server" Height="20px" style="margin-bottom: 0px">
                             <asp:ListItem Value="contiene">Contiene:</asp:ListItem>
                             <asp:ListItem Value="empieza con">Empieza con:</asp:ListItem>
                             <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:TextBox ID="txtDescripcion" runat="server" Width="145px"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="txtDescripcion" runat="server" Width="145px"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripción ingresada contiene caracteres inválidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
-                        &nbsp;&nbsp;<asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="btnBuscar_Click" Text="Buscar" ValidationGroup="GrupoFA" Width="91px" />
-                        &nbsp;<asp:Button ID="btnLimpiarFA" runat="server" BackColor="#FFFFCC" OnClick="btnLimpiarFA_Click" Text="Limpiar Filtros" Width="129px" />
-                        &nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    </td>
+                </tr>
+                <tr>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style33">&nbsp;</td>
-                    <td class="auto-style26">
-                        <asp:Label ID="lblFiltrosVacios" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style16">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style32">
-                        &nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
-                    <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" Height="29px" OnClick="btnBuscar_Click" Text="Buscar" ValidationGroup="GrupoFA" Width="70px" />
+                        &nbsp;&nbsp;
+                        <asp:Button ID="btnLimpiarFA" runat="server" BackColor="#FFFFCC" Height="27px" OnClick="btnLimpiarFA_Click" Text="Limpiar Filtros" Width="129px" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br />
+                        &nbsp;<asp:Label ID="lblFiltrosVacios" runat="server"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:ValidationSummary ID="vsFiltrosAvanzados" runat="server" ValidationGroup="GrupoFA" Width="240px" />
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
         </asp:Panel>
