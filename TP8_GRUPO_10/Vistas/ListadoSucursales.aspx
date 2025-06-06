@@ -108,7 +108,7 @@
                             <asp:ListItem Value="menor a">Menor a:</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;<asp:TextBox ID="txtIdSucursal" runat="server" Width="54px"></asp:TextBox>
-                        &nbsp;<asp:RegularExpressionValidator ID="revIDSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID deve ser numerico y entero." ValidationExpression="^\d+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
+                        &nbsp;<asp:RegularExpressionValidator ID="revIDSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID debe ser numérico y entero." ValidationExpression="^\d+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                         &nbsp;<asp:DropDownList ID="ddlNombre" runat="server" Height="20px" style="margin-bottom: 0px">
@@ -117,7 +117,7 @@
                             <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
                         </asp:DropDownList>
                         <asp:TextBox ID="txtNombre" runat="server" Width="145px"></asp:TextBox>
-                        &nbsp;<asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
+                        &nbsp;<asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres inválidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
                         &nbsp;&nbsp;
                         <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                         &nbsp;<asp:DropDownList ID="ddlDescripcion" runat="server" Height="20px" style="margin-bottom: 0px">
