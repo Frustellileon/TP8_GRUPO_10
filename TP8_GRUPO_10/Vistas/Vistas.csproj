@@ -189,8 +189,8 @@
     <Content Include="AgregarSucursal.aspx" />
     <Content Include="EliminarSucursal.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="ListadoSucursales.aspx" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="ListadoSucursales.aspx" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
