@@ -55,7 +55,7 @@ namespace AccesoDatos
 
             SqlDataAdapter adaptador = new SqlDataAdapter(consultaAvanzada, accesoDatos.ObtenerConexion());
             adaptador.Fill(ds, "Sucursal");
-
+            accesoDatos.CerrarConexion();
             return ds.Tables["Sucursal"];                        
         }
         public void ArmarParametro_EliminarSucursal(ref SqlCommand command, Sucursal IDsucursal)
