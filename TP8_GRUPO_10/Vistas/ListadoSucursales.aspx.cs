@@ -203,7 +203,8 @@ namespace Vistas
             }
             else
             {
-                LimpiarFiltrosAvanzados();  
+                LimpiarFiltrosAvanzados();
+                CargarTodasLasSucursales();
             }
             lblFiltrosVacios.Text = string.Empty;
         }
