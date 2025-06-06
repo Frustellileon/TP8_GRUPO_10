@@ -13,7 +13,7 @@ namespace Vistas
         NegocioSucursales negocioSucursales = new NegocioSucursales();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if(IsPostBack)
             {
                 lblMensaje.Text = string.Empty;
             }

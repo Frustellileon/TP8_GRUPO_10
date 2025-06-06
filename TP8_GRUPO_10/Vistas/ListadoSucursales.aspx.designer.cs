@@ -159,6 +159,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
 
         /// <summary>
+        /// Control revIDSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revIDSucursal;
+
+        /// <summary>
         /// Control lblNombre.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
+
+        /// <summary>
+        /// Control revNombreS_valido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombreS_valido;
 
         /// <summary>
         /// Control lblDescripcion.
@@ -213,6 +231,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
+        /// Control revDescripcion_valido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDescripcion_valido;
+
+        /// <summary>
         /// Control btnBuscar.
         /// </summary>
         /// <remarks>
@@ -222,6 +249,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
+        /// Control btnLimpiarFA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiarFA;
+
+        /// <summary>
         /// Control lblFiltrosVacios.
         /// </summary>
         /// <remarks>
@@ -229,5 +265,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFiltrosVacios;
+
+        /// <summary>
+        /// Control vsFiltrosAvanzados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsFiltrosAvanzados;
     }
 }

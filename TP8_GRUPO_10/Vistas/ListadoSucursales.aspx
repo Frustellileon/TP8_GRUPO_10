@@ -9,7 +9,7 @@
     <style type="text/css">
 
         .auto-style1 {
-            width: 100%;
+            width: 112%;
         }
         .auto-style3 {
             width: 151px;
@@ -57,18 +57,21 @@
         .auto-style17 {
             width: 64px;
         }
-        .auto-style23 {
-            height: 30px;
-            width: 78px;
-        }
         .auto-style25 {
             width: 86px;
         }
         .auto-style26 {
             width: 158px;
         }
-        .auto-style28 {
-            width: 166px;
+        .auto-style31 {
+            width: 626px;
+        }
+        .auto-style32 {
+            width: 177px;
+        }
+        .auto-style33 {
+            height: 30px;
+            width: 121px;
         }
     </style>
 </head>
@@ -144,10 +147,10 @@
         </div>
         <asp:GridView ID="gvListadoSucursales" runat="server">
         </asp:GridView>
-        <asp:Panel ID="Panel1" runat="server">
+        <asp:Panel ID="Panel1" runat="server" Width="1402px">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style23">
+                    <td class="auto-style33">
                         &nbsp;</td>
                     <td class="auto-style26">
                         &nbsp;</td>
@@ -155,18 +158,18 @@
                         &nbsp;</td>
                     <td class="auto-style17">
                         &nbsp;</td>
-                    <td class="auto-style28">
+                    <td class="auto-style32">
                         &nbsp;</td>
                     <td class="auto-style25">
                         &nbsp;</td>
-                    <td>
+                    <td class="auto-style31">
                         &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style23">
+                    <td class="auto-style33">
                         <asp:Label ID="lblIdSucursal" runat="server" Text="ID Sucursal"></asp:Label>
                     </td>
                     <td class="auto-style26">
@@ -176,6 +179,7 @@
                             <asp:ListItem Value="menor a">Menor a:</asp:ListItem>
                         </asp:DropDownList>
                         <asp:TextBox ID="txtIdSucursal" runat="server" Width="54px"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="revIDSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="El ID deve ser numerico y entero." ValidationExpression="^\d+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style16">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
@@ -187,36 +191,41 @@
                             <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style28">
+                    <td class="auto-style32">
                         <asp:TextBox ID="txtNombre" runat="server" Width="145px"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="revNombreS_valido" runat="server" ControlToValidate="txtNombre" Display="Dynamic" ErrorMessage="El nombre de sucursal ingresado contiene caracteres invalidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ '.\-]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style25">
                         <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style31">
                         <asp:DropDownList ID="ddlDescripcion" runat="server" Height="20px">
                             <asp:ListItem Value="contiene">Contiene:</asp:ListItem>
                             <asp:ListItem Value="empieza con">Empieza con:</asp:ListItem>
                             <asp:ListItem Value="termina con">Termina con:</asp:ListItem>
                         </asp:DropDownList>
                         <asp:TextBox ID="txtDescripcion" runat="server" Width="145px"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="btnBuscar_Click" Text="Buscar" Width="91px" />
-                    </td>
+                        <asp:RegularExpressionValidator ID="revDescripcion_valido" runat="server" ControlToValidate="txtDescripcion" Display="Dynamic" ErrorMessage="La descripción ingresada contiene caracteres inválidos." ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ .,;'\-()]+$" ValidationGroup="GrupoFA">*</asp:RegularExpressionValidator>
+                        &nbsp;&nbsp;<asp:Button ID="btnBuscar" runat="server" BackColor="#FFFFCC" OnClick="btnBuscar_Click" Text="Buscar" ValidationGroup="GrupoFA" Width="91px" />
+                        &nbsp;<asp:Button ID="btnLimpiarFA" runat="server" BackColor="#FFFFCC" OnClick="btnLimpiarFA_Click" Text="Limpiar Filtros" Width="129px" />
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style33">&nbsp;</td>
                     <td class="auto-style26">
                         <asp:Label ID="lblFiltrosVacios" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style28">
+                    <td class="auto-style32">
                         &nbsp;</td>
                     <td class="auto-style25">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:ValidationSummary ID="vsFiltrosAvanzados" runat="server" ValidationGroup="GrupoFA" Width="240px" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

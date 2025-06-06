@@ -23,10 +23,6 @@ namespace Vistas
             {
                 CargarTodasLasSucursales();
             }
-            else
-            {
-                lblListadoSucursales.Text = string.Empty;
-            }
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -170,7 +166,7 @@ namespace Vistas
         {
             if (FiltrosVacios())
             {
-                lblFiltrosVacios.Text = "No se llenó ningún filtro.";
+                lblFiltrosVacios.Text = "No se llenó ningún filtro particular.";
                 return;
             }
             else
@@ -186,6 +182,30 @@ namespace Vistas
             lblNotFound.Text = string.Empty;
             txtFiltroId.Text = string.Empty;
 
+        }
+
+        void LimpiarFiltrosAvanzados()
+        {
+            txtIdSucursal.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            ddlIdSucursal.SelectedIndex = 0;
+            ddlNombre.SelectedIndex = 0;
+            ddlDescripcion.SelectedIndex = 0;
+        }
+
+        protected void btnLimpiarFA_Click(object sender, EventArgs e)
+        {
+            if (FiltrosVacios())
+            {
+                lblFiltrosVacios.Text = "No se llenó ningún filtro particular.";
+                return;
+            }
+            else
+            {
+                LimpiarFiltrosAvanzados();  
+            }
+            lblFiltrosVacios.Text = string.Empty;
         }
     }
 }
