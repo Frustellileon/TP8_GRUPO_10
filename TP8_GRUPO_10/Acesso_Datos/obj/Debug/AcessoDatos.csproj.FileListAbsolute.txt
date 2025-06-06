@@ -1,0 +1,10 @@
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\bin\Debug\Acesso_Datos.dll
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\bin\Debug\Acesso_Datos.pdb
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\bin\Debug\Entidades.dll
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\bin\Debug\Entidades.pdb
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\bin\Debug\Entidades.dll.config
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\obj\Debug\AcessoDatos.csproj.AssemblyReference.cache
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\obj\Debug\AcessoDatos.csproj.CoreCompileInputs.cache
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\obj\Debug\AcessoDa.534CA11C.Up2Date
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\obj\Debug\Acesso_Datos.dll
+C:\Users\aleji\OneDrive\Escritorio\Programacion 3\U8-Ejercicios\TP8_GRUPO_10\TP8_GRUPO_10\Acesso_Datos\obj\Debug\Acesso_Datos.pdb
